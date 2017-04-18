@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import { Movie } from '../movies/movie';
 
 
-
 @Component({
   selector: 'movie-list',
   templateUrl: './list.component.html',
@@ -10,5 +9,5 @@ import { Movie } from '../movies/movie';
 })
 
 export class MovieListComponent {
-
+  movies: Movie[];
 }

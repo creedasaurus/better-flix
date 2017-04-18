@@ -8,5 +8,5 @@ import { Movie } from '../movies/movie';
 })
 
 export class MovieCardComponent {
-  @Input() movie: string;
+  @Input() movie: Movie;
 }
