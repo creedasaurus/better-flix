@@ -1,25 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Movie } from './movies/movie';
+import { MoviesService } from './movies/movies.service';
 
-const MOVIES: Movie[] = [
-  { id: 1,
-    title: 'Slappy Tap Dance',
-    year_released: new Date('1998-04-04'),
-    director: 'Hanz Zimmer',
-    description: 'This is such a great movie. Go and check out the latest thing.'
-  },
-];
 
 @Component({
+  providers: [MoviesService],
   selector: 'movie-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Tour of heros';
-  movies = MOVIES;
+export class AppComponent implements OnInit {
+  movies: Movie[];
   selectedMovie: Movie;
-  onSelect(movie: Movie): void {
-    this.selectedMovie = movie;
+  getMovieList(): void {
+    this.movies = this.movieService.getMovies();
   }
+
+  ngOnInit(): void {
+    this.getMovieList();
+  }
+
+  constructor(private movieService: MoviesService) {}
 }

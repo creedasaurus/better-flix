@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { Movie } from '../movies/movie';
 
 
@@ -9,5 +9,5 @@ import { Movie } from '../movies/movie';
 })
 
 export class MovieListComponent {
-  movies: Movie[];
+  @Input() movies: Movie[];
 }
