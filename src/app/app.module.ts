@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdCardModule } from '@angular/material';
-import { MdButtonModule } from '@angular/material';
+// Angular Material stuff vvv
+import { MdCardModule, MdButtonModule, MdToolbarModule } from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { MainMenuBarComponent } from './menu/menu.component';
@@ -16,6 +17,7 @@ import { MovieListComponent } from './list/list.component';
     BrowserAnimationsModule,
     MdCardModule,
     MdButtonModule,
+    MdToolbarModule,
     BrowserModule,
     FormsModule,
     HttpModule
