@@ -1,4 +1,6 @@
-# BetterFlix
+# Better Flix
+
+An app where Josh and Creed will learn some Angular 2 and hopefully pass Web III
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
