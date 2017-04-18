@@ -1,0 +1,15 @@
+.example-card {
+  width: 200px;
+}
+
+.movie-card-style {
+  background: tomato;
+  /*padding: 5px;*/
+  width: 250px;
+  margin: 4px;
+  color: white;
+}
+
+md-card-header {
+  text-align: center;
+}
