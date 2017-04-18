@@ -1,5 +1,7 @@
 <!-- We will build a CSS flexbox that will create a bunch of
 movie cards and list them properly -->
+
+
 <ul class="flex-container"> <!-- this [movie] thing corresponds to the Input() of movie-card -->
   <movie-card *ngFor="let movie of movies" [movie]="movie"></movie-card>
 </ul>

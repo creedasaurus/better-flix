@@ -1,11 +1,11 @@
-<main-menu-bar></main-menu-bar>
 <h1>Better Flix</h1>
 <h3>A better movie web-app</h3>
-
 <div *ngIf="selectedMovie">
   <h2>{{selectedMovie.title}} details!</h2>
   <div><label>id: </label>{{selectedMovie.id}}</div>
 </div>
+<main-menu-bar></main-menu-bar>
+
 
 <div class="app-list-body">
   <movie-list [movies]="movies" ></movie-list>

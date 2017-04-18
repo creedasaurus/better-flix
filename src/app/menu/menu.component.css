@@ -1,0 +1,11 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
