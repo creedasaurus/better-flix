@@ -15,11 +15,35 @@ const MOVIES: Movie[] = [
     description: 'Best show of all time. Go see some things.'
   },
   { id: 3,
-    title: 'Pooty Tang',
-    year_released: new Date('2001-01-01'),
-    director: 'Candy Harmon',
-    description: 'Just.... just don\'t read into it too much'
+    title: 'Rude Booty',
+    year_released: new Date('2010-01-01'),
+    director: 'Great Guy',
+    description: 'One heck of a wow.'
   },
+  { id: 4,
+    title: 'A credit company',
+    year_released: new Date('1959-03-10'),
+    director: 'Candy Harmon',
+    description: 'Chowder Haws is amazing in this.'
+  },
+  { id: 5,
+    title: 'Robo-Cow 5',
+    year_released: new Date('2001-04-01'),
+    director: 'Candy Harmon',
+    description: 'Another one bites the fender guitar.'
+  },
+  { id: 6,
+    title: 'Roxberries',
+    year_released: new Date('2014-01-10'),
+    director: 'Dung Harmon',
+    description: 'I cant stand up after this'
+  },
+  { id: 7,
+    title: 'Poetry Tang',
+    year_released: new Date('1983-08-01'),
+    director: 'Buzz Dude',
+    description: 'There aint a movie in the world as good'
+  }
 ];
 
 @Injectable()

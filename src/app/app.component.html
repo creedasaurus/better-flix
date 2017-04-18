@@ -1,12 +1,16 @@
 <h1>Better Flix</h1>
 <h3>A better movie web-app</h3>
+
+<!-- Test for selecting stuff? It wont show unless there is something selected. Currently NOT used. -->
 <div *ngIf="selectedMovie">
   <h2>{{selectedMovie.title}} details!</h2>
   <div><label>id: </label>{{selectedMovie.id}}</div>
 </div>
+
+<!-- Menu Component -->
 <main-menu-bar></main-menu-bar>
 
-
-<div class="app-list-body">
+<!--  -->
+<div class="">
   <movie-list [movies]="movies" ></movie-list>
 </div>
