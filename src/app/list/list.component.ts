@@ -5,7 +5,7 @@ import { Movie } from '../movies/movie';
 @Component({
   selector: 'movie-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.scss']
 })
 
 export class MovieListComponent {
