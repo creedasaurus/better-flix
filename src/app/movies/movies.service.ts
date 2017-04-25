@@ -56,6 +56,8 @@ export class MoviesService {
   selectMov(movie: Movie) {
     this.selectedMovieSource.next(movie);
   }
+
+
   getMovies(): Movie[] {
     return MOVIES;
   }
