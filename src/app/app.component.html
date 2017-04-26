@@ -7,11 +7,17 @@
   <div><label>id: </label>{{selectedMovie.id}}</div>
 </div>
 
-<!-- Menu Component -->
-  <app-menu-bar></app-menu-bar>
 
-  <div class="">
-    <app-movie-container [movies]="movies" ></app-movie-container>
-  </div>
+<app-menu-bar></app-menu-bar>
 
-<!--  -->
+
+<app-movie-container [movies]="movieService.movies"></app-movie-container>
+
+
+
+<div>
+  TEST WATCHED LIST
+  <pre *ngFor="let movie of movieService.watchedMovies">
+    {{movie | json}}
+  </pre>
+</div>

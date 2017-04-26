@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Movie } from './movies/movie';
 import { MoviesService } from './movies/movies.service';
@@ -10,20 +10,12 @@ import { MoviesService } from './movies/movies.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  movies: Movie[];
+export class AppComponent {
+
   selectedMovie: Movie;
   subscription: Subscription;
 
-  getMovieList(): void {
-    this.movies = this.movieService.getMovies();
-  }
-
-  ngOnInit(): void {
-    this.getMovieList();
-  }
-
-  constructor(private movieService: MoviesService) {
+  constructor(public movieService: MoviesService) {
     // Dark magic -- subscription to the service to keep the selected movie up to date
     this.subscription = movieService.movieSelected$.subscribe(
       movie => { this.selectedMovie = movie; }

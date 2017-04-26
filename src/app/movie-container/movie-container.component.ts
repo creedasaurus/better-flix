@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input } from '@angular/core';
 import { Movie } from '../movies/movie';
+// import { MoviesService } from '../movies/movies.service';
 
 
 @Component({
@@ -11,5 +12,7 @@ import { Movie } from '../movies/movie';
 export class MovieContainerComponent {
   @Input() movies: Movie[];
   toggleTableView = true;
+
+
   constructor() {}
 }

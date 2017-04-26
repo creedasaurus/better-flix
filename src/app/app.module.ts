@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
 import { MovieContainerComponent } from './movie-container/movie-container.component';
-import { MovieAgePipe } from './movies/movie-age.pipe';
 
 @NgModule({
   imports: [
@@ -39,8 +38,7 @@ import { MovieAgePipe } from './movies/movie-age.pipe';
     AppComponent,
     MenuBarComponent,
     MovieCardComponent,
-    MovieContainerComponent,
-    MovieAgePipe
+    MovieContainerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
