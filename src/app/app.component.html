@@ -8,9 +8,10 @@
 </div>
 
 <!-- Menu Component -->
-<main-menu-bar></main-menu-bar>
+  <app-menu-bar></app-menu-bar>
+
+  <div class="">
+    <app-movie-container [movies]="movies" ></app-movie-container>
+  </div>
 
 <!--  -->
-<div class="">
-  <movie-list [movies]="movies" ></movie-list>
-</div>

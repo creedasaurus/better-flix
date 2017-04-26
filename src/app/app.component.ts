@@ -6,7 +6,7 @@ import { MoviesService } from './movies/movies.service';
 
 @Component({
   providers: [MoviesService],
-  selector: 'movie-app',
+  selector: 'app-better-flix',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

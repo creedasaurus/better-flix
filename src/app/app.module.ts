@@ -10,13 +10,16 @@ import {
   MdToolbarModule,
   MdIconModule,
   MdInputModule,
-  MdSelectModule } from '@angular/material';
+  MdSelectModule,
+  MdSidenavModule
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
-import { MainMenuBarComponent } from './menu/menu.component';
+import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
-import { MovieListComponent } from './list/list.component';
+import { MovieContainerComponent } from './movie-container/movie-container.component';
+import { MovieAgePipe } from './movies/movie-age.pipe';
 
 @NgModule({
   imports: [
@@ -27,15 +30,17 @@ import { MovieListComponent } from './list/list.component';
     MdToolbarModule,
     MdInputModule,
     MdSelectModule,
+    MdSidenavModule,
     BrowserModule,
     FormsModule,
     HttpModule
   ],
   declarations: [
     AppComponent,
-    MainMenuBarComponent,
+    MenuBarComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieContainerComponent,
+    MovieAgePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

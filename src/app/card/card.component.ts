@@ -3,7 +3,7 @@ import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 
 @Component({
-  selector: 'movie-card',
+  selector: 'app-movie-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })

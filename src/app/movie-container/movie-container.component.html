@@ -1,0 +1,7 @@
+<!-- We will build a CSS flexbox that will create a bunch of
+movie cards and list them properly -->
+
+
+<ul class="flex-container"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
+  <app-movie-card *ngFor="let movie of movies | movieAge: '1995-10-10'" [movie]="movie"></app-movie-card>
+</ul>
