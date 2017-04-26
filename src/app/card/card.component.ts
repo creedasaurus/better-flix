@@ -19,6 +19,9 @@ export class MovieCardComponent {
     return this._movie;
   }
 
+  clickWatchedButton(movie: Movie) {
+    this.movieService.addToWatched(movie);
+  }
   clickLikeButton(movie: Movie) {
     console.log(movie);
     this.movieService.selectMov(movie);

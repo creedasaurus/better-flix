@@ -50,14 +50,21 @@ const MOVIES: Movie[] = [
 @Injectable()
 export class MoviesService {
   private selectedMovieSource = new Subject<Movie>();
+  private watchedMoviesSource = new Subject<Array<Movie>>();
   // Weird dark magic stuff that I don't fully understand ^v^v
   movieSelected$ = this.selectedMovieSource.asObservable();
+  watchedMovies$ = this.watchedMoviesSource.asObservable();
+  // public watchedMovies: Movie[];
 
+  addToWatched(movie: Movie) {
+    this.watchedMovies$.push(movie);
+    console.log(this.watchedMovies);
+  }
   selectMov(movie: Movie) {
     this.selectedMovieSource.next(movie);
   }
   getMovies(): Movie[] {
     return MOVIES;
   }
-  constructor() { }
+  constructor() {}
 }
