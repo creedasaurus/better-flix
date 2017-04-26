@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
 import { MovieContainerComponent } from './movie-container/movie-container.component';
+import { MoviesService } from './movies/movies.service';
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ import { MovieContainerComponent } from './movie-container/movie-container.compo
     MovieCardComponent,
     MovieContainerComponent
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

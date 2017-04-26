@@ -11,7 +11,6 @@ import { MoviesService } from '../movies/movies.service';
 export class MovieCardComponent {
   private _movie: Movie;
 
-
   @Input()
   set movie(movie: Movie) {
     this._movie = movie;
