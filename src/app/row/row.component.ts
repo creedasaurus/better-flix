@@ -3,12 +3,12 @@ import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 
 @Component({
-  selector: 'app-movie-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-movie-row',
+  templateUrl: './row.component.html',
+  styleUrls: ['./row.component.scss']
 })
 
-export class MovieTableComponent {
+export class MovieRowComponent {
   private _movie: Movie;
 
   @Input()

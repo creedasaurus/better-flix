@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdCardModule,
   MdButtonModule,
+  MdButtonToggleModule,
   MdToolbarModule,
   MdIconModule,
   MdInputModule,
@@ -21,9 +22,8 @@ import {
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
-import { MovieContainerComponent } from './movie-container/movie-container.component';
 import { MoviesService } from './movies/movies.service';
-import { MovieTableComponent } from './table/table.component';
+import { MovieRowComponent } from './row/row.component';
 
 @NgModule({
   imports: [
@@ -31,6 +31,7 @@ import { MovieTableComponent } from './table/table.component';
     MdIconModule,
     MdCardModule,
     MdButtonModule,
+    MdButtonToggleModule,
     MdToolbarModule,
     MdInputModule,
     MdSelectModule,
@@ -45,8 +46,7 @@ import { MovieTableComponent } from './table/table.component';
     AppComponent,
     MenuBarComponent,
     MovieCardComponent,
-    MovieTableComponent,
-    MovieContainerComponent
+    MovieRowComponent
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
