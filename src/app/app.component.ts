@@ -32,10 +32,15 @@ export class AppComponent implements OnInit {
   getNewMovies() {
     this.movieService.getMovies()
       .subscribe( movies => this._movies = movies );
+    this.movieService.getWatched()
+      .subscribe(function (watched) {
+        this._watchedMovies = watched;
+      });
   }
 
   testButton() {
-    console.log('test button (nothing)');
+    // console.log('test button (nothing)');
+    console.log(this._watchedMovies[0].id);
   }
 
   filterWatched() {
