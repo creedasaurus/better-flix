@@ -10,31 +10,37 @@ import { MoviesService } from './movies/movies.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  _movies: Movie[];
+  _movies: Movie[] = [];
   selectedMovie: Movie;
-  _watchedMovies: Movie[];
-  selectedSubscription: Subscription;
-
+  _watchedMovies: Movie[] = [];
 
   constructor(public movieService: MoviesService) {
-    this.selectedSubscription = movieService.movieSelected$.subscribe(
+    // TODO: Every time a movie is selected (no purpose for this currently)
+    movieService.movieSelected$.subscribe(
       movie => { this.selectedMovie = movie; }
+    );
+
+    // Adds a 'watched' movie to local array
+    movieService.watchedMovie$.subscribe(
+      movie => {
+        this._watchedMovies.push(movie);
+        this._movies = this._movies.filter(mov => mov.id !== movie.id);
+      }
     );
   }
 
   getNewMovies() {
     this.movieService.getMovies()
       .subscribe( movies => this._movies = movies );
-
   }
 
   testButton() {
-    console.log(this._movies.pop());
+    console.log('test button (nothing)');
   }
 
   // Initialization (runs once)
   ngOnInit() {
-    console.log('in init of app component');
+    // console.log('in init of app component');
     this.getNewMovies();
   }
 }

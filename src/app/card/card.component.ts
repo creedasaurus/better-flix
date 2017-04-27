@@ -20,7 +20,7 @@ export class MovieCardComponent {
   }
 
   clickWatchedButton(movie: Movie) {
-    this.movieService.addToWatched(movie);
+    this.movieService.watched(movie);
   }
 
   clickLikeButton(movie: Movie) {

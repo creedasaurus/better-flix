@@ -8,7 +8,7 @@ import { Movie } from '../movies/movie';
   styleUrls: ['./movie-container.component.scss']
 })
 
-export class MovieContainerComponent implements OnInit, OnChanges {
+export class MovieContainerComponent implements OnInit {
 
   public _movies: Movie[];
 
@@ -27,7 +27,4 @@ export class MovieContainerComponent implements OnInit, OnChanges {
 
   ngOnInit() { }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes['movies']);
-  }
 }

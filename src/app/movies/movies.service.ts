@@ -35,13 +35,16 @@ export class MoviesService {
   }
 
   watched(movie: Movie) {
+    console.log(`Watching ${movie.title}`);
+    console.log('pushing to server and updating observable');
+    this.addToWatched(movie);
     this.watchedMovieSource.next(movie);
   }
 
 
   // TODO: Will push a new movie to the server for the user.
   addToWatched(movie: Movie) {
-
+    console.log('pushing movie to server DB');
   }
 
   // selects a movie

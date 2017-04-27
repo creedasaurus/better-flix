@@ -13,7 +13,8 @@ import {
   MdInputModule,
   MdSelectModule,
   MdSidenavModule,
-  MdListModule
+  MdListModule,
+  MdDialogModule
 } from '@angular/material';
 
 
@@ -34,6 +35,7 @@ import { MovieTableComponent } from './table/table.component';
     MdInputModule,
     MdSelectModule,
     MdSidenavModule,
+    MdDialogModule,
     BrowserModule,
     FormsModule,
     HttpModule,
