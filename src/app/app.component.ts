@@ -12,17 +12,20 @@ import { MoviesService } from './movies/movies.service';
 export class AppComponent implements OnInit {
   _movies: Movie[];
   selectedMovie: Movie;
-  subscription: Subscription;
+  _watchedMovies: Movie[];
+  selectedSubscription: Subscription;
+
 
   constructor(public movieService: MoviesService) {
-    this.subscription = movieService.movieSelected$.subscribe(
+    this.selectedSubscription = movieService.movieSelected$.subscribe(
       movie => { this.selectedMovie = movie; }
     );
   }
 
-  getMovies() {
+  getNewMovies() {
     this.movieService.getMovies()
       .subscribe( movies => this._movies = movies );
+
   }
 
   testButton() {
@@ -32,6 +35,6 @@ export class AppComponent implements OnInit {
   // Initialization (runs once)
   ngOnInit() {
     console.log('in init of app component');
-    this.getMovies();
+    this.getNewMovies();
   }
 }

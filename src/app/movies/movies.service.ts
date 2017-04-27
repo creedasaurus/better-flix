@@ -12,6 +12,8 @@ import { Movie } from './movie';
 export class MoviesService {
   private selectedMovieSource = new Subject<Movie>();
   movieSelected$ = this.selectedMovieSource.asObservable();
+  private watchedMovieSource = new Subject<Movie>();
+  watchedMovie$ = this.watchedMovieSource.asObservable();
 
   private serverURL = 'http://localhost:5000/api/v1';
   public watchedMovies = [];
@@ -31,6 +33,11 @@ export class MoviesService {
     console.log(things);
     return things;
   }
+
+  watched(movie: Movie) {
+    this.watchedMovieSource.next(movie);
+  }
+
 
   // TODO: Will push a new movie to the server for the user.
   addToWatched(movie: Movie) {
