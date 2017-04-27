@@ -38,9 +38,14 @@ export class AppComponent implements OnInit {
     console.log('test button (nothing)');
   }
 
+  filterWatched() {
+
+  }
+
   // Initialization (runs once)
   ngOnInit() {
     // console.log('in init of app component');
     this.getNewMovies();
+
   }
 }

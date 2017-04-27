@@ -60,9 +60,22 @@ let test_movies_1 = [
   }
 ];
 
+let watched = [
+   { id: 5,
+    title: 'Robo-Cow 5',
+    year_released: '2001-04-01',
+    director: 'Candy Harmon',
+    description: 'Another one bites the fender guitar.'
+  }
+]
 
-router.get('/movies.json', function (req, res) {
+router.get('/new/movies.json', function (req, res) {
   winston.info('Getting all the films'.green);
+  res.status(200).json(test_movies_1);
+});
+
+router.get('/my/movies.json', function (req, res) {
+  winston.info('Getting my watched movies'.green);
   res.status(200).json(test_movies_1);
 });
 
