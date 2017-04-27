@@ -13,6 +13,11 @@ export class AppComponent implements OnInit {
   _movies: Movie[] = [];
   _watchedMovies: Movie[] = [];
   selectedMovie: Movie;
+  cardsView = true;
+
+  onViewChange(cardsView: boolean) {
+    cardsView ? this.cardsView = true : this.cardsView = false;
+  }
 
   constructor(public movieService: MoviesService) {
     // TODO: Every time a movie is selected (no purpose for this currently)
