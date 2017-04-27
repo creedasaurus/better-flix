@@ -8,7 +8,6 @@ nconf.argv()
   .env()
   .file({file:'config.json'});
 const PORT = nconf.get("PORT");
-
 const IP  = nconf.get("IP");
 
 let logger = require('morgan');
@@ -24,14 +23,6 @@ app.use(logger('dev'));
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// DEV MODE FOR CROSS ORIGIN STUFF
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-// REMOVE FOR PRODUCTION ^^^
 
 app.use('/api/v1', rest.router);
 

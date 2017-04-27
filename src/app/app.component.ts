@@ -11,8 +11,8 @@ import { MoviesService } from './movies/movies.service';
 })
 export class AppComponent implements OnInit {
   _movies: Movie[] = [];
-  selectedMovie: Movie;
   _watchedMovies: Movie[] = [];
+  selectedMovie: Movie;
 
   constructor(public movieService: MoviesService) {
     // TODO: Every time a movie is selected (no purpose for this currently)

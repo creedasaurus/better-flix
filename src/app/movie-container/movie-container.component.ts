@@ -10,12 +10,11 @@ import { Movie } from '../movies/movie';
 
 export class MovieContainerComponent implements OnInit {
 
-  public _movies: Movie[];
+  public _movies: Movie[] = [];
 
   @Input()
   set movies(movArr: Movie[]) {
-    // console.log(movArr);
-    this._movies = movArr || [];
+    this._movies = movArr;
   }
   get movies() {
     return this._movies;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { Headers, Http, Response } from '@angular/http';
+import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -15,7 +15,7 @@ export class MoviesService {
   private watchedMovieSource = new Subject<Movie>();
   watchedMovie$ = this.watchedMovieSource.asObservable();
 
-  private serverURL = 'http://localhost:5000/api/v1';
+  private serverURL = '/api/v1';
   public watchedMovies = [];
   public slctdMovie: Movie;
 
@@ -26,8 +26,6 @@ export class MoviesService {
   getMovies(): Observable<Movie[]> {
     const things = this.http.get(this.serverURL + '/movies.json')
           .map(function (res) {
-            console.log(res.json());
-            // res.json().forEach(thing => console.log(thing));
             return res.json().map(mov => <Movie>mov);
           });
     console.log(things);
@@ -45,13 +43,13 @@ export class MoviesService {
   // TODO: Will push a new movie to the server for the user.
   addToWatched(movie: Movie) {
     console.log('pushing movie to server DB');
+    this.http.post(this.serverURL + '/watched', {"this": "test"} ).subscribe();
   }
 
   // selects a movie
   selectMov(movie: Movie) {
     this.selectedMovieSource.next(movie);
   }
-
 
   // Simplifies extracting data from the server response
   private extractData(res: Response) {

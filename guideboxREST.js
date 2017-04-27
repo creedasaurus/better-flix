@@ -66,6 +66,11 @@ router.get('/movies.json', function (req, res) {
   res.status(200).json(test_movies_1);
 });
 
+router.post('/watched', function (req, res) {
+  console.log(req.body);
+  res.status(200).json({"gotit":1});
+});
+
 module.exports = {
   'router': router
 };
