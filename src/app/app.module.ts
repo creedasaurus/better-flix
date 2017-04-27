@@ -11,7 +11,8 @@ import {
   MdIconModule,
   MdInputModule,
   MdSelectModule,
-  MdSidenavModule
+  MdSidenavModule,
+  MdListModule
 } from '@angular/material';
 
 
@@ -20,6 +21,7 @@ import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
 import { MovieContainerComponent } from './movie-container/movie-container.component';
 import { MoviesService } from './movies/movies.service';
+import { MovieTableComponent } from './table/table.component';
 
 @NgModule({
   imports: [
@@ -33,12 +35,14 @@ import { MoviesService } from './movies/movies.service';
     MdSidenavModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MdListModule
   ],
   declarations: [
     AppComponent,
     MenuBarComponent,
     MovieCardComponent,
+    MovieTableComponent,
     MovieContainerComponent
   ],
   providers: [MoviesService],
