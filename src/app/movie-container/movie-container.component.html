@@ -1,7 +1,23 @@
 <!-- We will build a CSS flexbox that will create a bunch of
 movie cards and list them properly -->
 
+<md-toolbar>
+  <span class="spacer"></span>
+  <md-button-toggle-group>
+    <md-button-toggle>
+      <md-icon>list</md-icon>
+    </md-button-toggle>
+    <md-button-toggle>
+      <md-icon>view_module</md-icon>
+    </md-button-toggle>
+  </md-button-toggle-group>
+</md-toolbar>
 
 <ul class="flex-container" *ngIf="movies"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
     <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
 </ul>
+
+<md-list>
+  <h1 md-subheader>Movies</h1>
+  <app-movie-table *ngFor="let movie of movies" [movie]="movie"></app-movie-table>
+</md-list>
