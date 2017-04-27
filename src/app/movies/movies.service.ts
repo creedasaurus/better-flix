@@ -39,11 +39,10 @@ export class MoviesService {
     this.watchedMovieSource.next(movie);
   }
 
-
   // TODO: Will push a new movie to the server for the user.
   addToWatched(movie: Movie) {
     console.log('pushing movie to server DB');
-    this.http.post(this.serverURL + '/watched', {"this": "test"} ).subscribe();
+    this.http.post(this.serverURL + '/watched', movie).subscribe();
   }
 
   // selects a movie
