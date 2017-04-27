@@ -71,12 +71,15 @@ let watched = [
 
 router.get('/new/movies.json', function (req, res) {
   winston.info('Getting all the films'.green);
-  res.status(200).json(test_movies_1);
+  let resp_movies = test_movies_1.filter(function (movie) {
+    return watched.map(x => x.id).indexOf(movie.id) === -1;
+  });
+  res.status(200).json(resp_movies);
 });
 
 router.get('/my/movies.json', function (req, res) {
   winston.info('Getting my watched movies'.green);
-  res.status(200).json(test_movies_1);
+  res.status(200).json(watched);
 });
 
 router.post('/watched', function (req, res) {
