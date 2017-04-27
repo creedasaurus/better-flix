@@ -25,7 +25,7 @@ export class MovieCardComponent {
 
   clickLikeButton(movie: Movie) {
     console.log(movie);
-    this.movieService.selectMov(movie);
+    this.movieService.slctdMovie = movie;
   }
   constructor(private movieService: MoviesService) {}
 }

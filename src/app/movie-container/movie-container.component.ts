@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Movie } from '../movies/movie';
 
 
@@ -8,9 +8,26 @@ import { Movie } from '../movies/movie';
   styleUrls: ['./movie-container.component.scss']
 })
 
-export class MovieContainerComponent {
-  @Input() movies: Movie[];
+export class MovieContainerComponent implements OnInit, OnChanges {
+
+  public _movies: Movie[];
+
+  @Input()
+  set movies(movArr: Movie[]) {
+    // console.log(movArr);
+    this._movies = movArr || [];
+  }
+  get movies() {
+    return this._movies;
+  }
+
   toggleTableView = true;
 
   constructor() {}
+
+  ngOnInit() { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes['movies']);
+  }
 }

@@ -25,6 +25,14 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// DEV MODE FOR CROSS ORIGIN STUFF
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+// REMOVE FOR PRODUCTION ^^^
+
 app.use('/api/v1', rest.router);
 
 winston.info(`Listening on port: ${PORT}`.cyan);

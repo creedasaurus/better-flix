@@ -2,6 +2,6 @@
 movie cards and list them properly -->
 
 
-<ul class="flex-container"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
-  <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+<ul class="flex-container" *ngIf="movies"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
+    <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
 </ul>
