@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdCardModule,
   MdButtonModule,
+  MdButtonToggleGroup,
   MdToolbarModule,
   MdIconModule,
   MdInputModule,
@@ -31,6 +32,7 @@ import { MovieTableComponent } from './table/table.component';
     MdIconModule,
     MdCardModule,
     MdButtonModule,
+    MdButtonToggleGroup,
     MdToolbarModule,
     MdInputModule,
     MdSelectModule,
