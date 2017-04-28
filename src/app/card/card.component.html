@@ -6,11 +6,11 @@
   <md-card-content>
     <img md-card-image src="{{movie.Poster}}" id="poster-image">
     <br/>
-    <p class="truncate">{{movie.Plot}}</p>
+    <p (click)="toggleExpand(1)" [ngClass]="{'truncate': expand !== 1}">{{movie.Plot}}</p>
     <br/>
-    <p class="truncate"><b>Director: </b>{{movie.Director}}</p>
-    <p class="truncate"><b>Writer: </b>{{movie.Writer}}</p>
-    <p class="truncate"><b>Staring: </b>{{movie.Actors}}</p>
+    <p (click)="toggleExpand(2)" [ngClass]="{'truncate': expand !== 2}"><b>Director: </b>{{movie.Director}}</p>
+    <p (click)="toggleExpand(3)" [ngClass]="{'truncate': expand !== 3}"><b>Writer: </b>{{movie.Writer}}</p>
+    <p (click)="toggleExpand(4)" [ngClass]="{'truncate': expand !== 4}"><b>Staring: </b>{{movie.Actors}}</p>
     <br/>
     <div class="flex-container">
       <div class="flex-item"><b>{{movie.imdbRating}}/10</b><br/>IMDb</div>

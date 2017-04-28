@@ -1,11 +1,3 @@
-// export class Movie {
-//   id: number;
-//   title: string;
-//   year_released: string;
-//   director: string;
-//   description: string;
-// }
-
 export class Movie {
   id: number;
   Title: string;
@@ -23,4 +15,5 @@ export class Movie {
   imdbRating: string;
   imdbID: string;
   rottentomatoes: string;
+  Type: string;
 }
