@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   selectedMovie: Movie;
   cardsView = true;
   filter: Object;
+  order: string;
 
   onViewChange(cardsView: boolean) {
     cardsView ? this.cardsView = true : this.cardsView = false;
@@ -49,10 +50,14 @@ export class AppComponent implements OnInit {
 
   }
 
-  onFilterChanges(filt: any) {
+  onFilterChanges(filt: Object) {
     // console.log(filt);
     this.filter = filt;
     console.log(this.filter);
+  }
+
+  orderChange(orderBy: string) {
+    this.order = orderBy;
   }
 
   // Initialization (runs once)

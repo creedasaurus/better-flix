@@ -8,7 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 export class MenuBarComponent {
   @Output() onViewChange = new EventEmitter<boolean>();
-  @Output() onFilterChnge = new EventEmitter<Object>();
+  @Output() onFilterChange = new EventEmitter<Object>();
+  @Output() onOrderChange = new EventEmitter<string>();
   filterOptions: string[];
 
   selectedFilter: string;
@@ -16,7 +17,7 @@ export class MenuBarComponent {
   selectedOrder: string;
 
   filters = {
-    'Rated': ['G', 'PG', 'PG-13', 'R', 'NR'],
+    'Rated': ['G', 'PG', 'PG-13', 'R', 'NR', 'TV-MA', 'TV-PG', 'TV-14'],
     'Genre': [
         'Action',
         'Adventure',
@@ -40,18 +41,19 @@ export class MenuBarComponent {
         'Thriller',
         'War',
         'Western'
-      ]
+      ],
+    'Type': ['movie', 'series']
   };
 
   orders = [
     'Score',
     'Title',
-    'Release Date',
+    'Released',
     'Genre'
   ];
 
   changeFilter() {
-    this.onFilterChnge.emit({
+    this.onFilterChange.emit({
       'filter': this.selectedFilter,
       'specFilt': this.selectedSpecFilter
     });

@@ -18,6 +18,9 @@ export class FilterByPipe implements PipeTransform {
         case 'Rated': {
           return movies.filter(mov => mov[filter['filter']] === filter['specFilt']);
         }
+        case 'Type': {
+          return movies.filter(mov => mov[filter['filter']] === filter['specFilt']);
+        }
       }
     }
 
