@@ -1,14 +1,14 @@
-import {Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 
 @Component({
-  selector: 'app-movie-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  selector: 'app-movie-row',
+  templateUrl: './row.component.html',
+  styleUrls: ['./row.component.scss']
 })
 
-export class MovieCardComponent {
+export class MovieRowComponent {
   private _movie: Movie;
 
   @Input()
@@ -25,7 +25,7 @@ export class MovieCardComponent {
 
   clickLikeButton(movie: Movie) {
     console.log(movie);
-    this.movieService.slctdMovie = movie;
+    this.movieService.selectMov(movie);
   }
   constructor(private movieService: MoviesService) {}
 }

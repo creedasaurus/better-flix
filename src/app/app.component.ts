@@ -1,32 +1,55 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Movie } from './movies/movie';
 import { MoviesService } from './movies/movies.service';
 
 
 @Component({
-  providers: [MoviesService],
-  selector: 'movie-app',
+  selector: 'app-better-flix',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  movies: Movie[];
+  _movies: Movie[] = [];
+  _watchedMovies: Movie[] = [];
   selectedMovie: Movie;
-  subscription: Subscription;
+  cardsView = true;
 
-  getMovieList(): void {
-    this.movies = this.movieService.getMovies();
+  onViewChange(cardsView: boolean) {
+    cardsView ? this.cardsView = true : this.cardsView = false;
   }
 
-  ngOnInit(): void {
-    this.getMovieList();
-  }
-
-  constructor(private movieService: MoviesService) {
-    // Dark magic -- subscription to the service to keep the selected movie up to date
-    this.subscription = movieService.movieSelected$.subscribe(
+  constructor(public movieService: MoviesService) {
+    // TODO: Every time a movie is selected (no purpose for this currently)
+    movieService.movieSelected$.subscribe(
       movie => { this.selectedMovie = movie; }
     );
+
+    // Adds a 'watched' movie to local array
+    movieService.watchedMovie$.subscribe( movie => {
+        this._watchedMovies.push(movie);
+        this._movies = this._movies.filter(mov => mov.id !== movie.id);
+      });
+  }
+
+  getNewMovies() {
+    this.movieService.getMovies()
+      .subscribe( movies => this._movies = movies );
+    this.movieService.getWatched()
+      .subscribe( watched => this._watchedMovies = watched );
+  }
+
+  testButton() {
+    // console.log('test button (nothing)');
+    console.log(this._watchedMovies);
+  }
+
+  filterWatched() {
+
+  }
+
+  // Initialization (runs once)
+  ngOnInit() {
+    this.getNewMovies();
   }
 }

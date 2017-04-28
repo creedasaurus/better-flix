@@ -2,7 +2,7 @@
   <md-card-header>
     <div md-card-avatar class="example-header-image"></div>
     <md-card-title>{{movie.title}}</md-card-title>
-    <md-card-subtitle>{{movie.year_released.getFullYear()}}</md-card-subtitle>
+    <md-card-subtitle>{{movie.year_released}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <h3>{{movie.director}}</h3>
@@ -12,6 +12,6 @@
   </md-card-content>
   <md-card-actions>
     <button md-button (click)="clickLikeButton(movie)">LIKE</button>
-    <button md-button>SHARE</button>
+    <button md-button (click)="clickWatchedButton(movie)">WATCHED</button>
   </md-card-actions>
 </md-card>

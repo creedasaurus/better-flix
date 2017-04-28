@@ -1,11 +1,15 @@
-import {Component} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'main-menu-bar',
+  selector: 'app-menu-bar',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 
-export class MainMenuBarComponent {
+export class MenuBarComponent {
+  @Output() onViewChange = new EventEmitter<boolean>();
 
+  viewChange(cardsView: boolean) {
+    this.onViewChange.emit(cardsView);
+  }
 }

@@ -2,15 +2,22 @@
 <h3>A better movie web-app</h3>
 
 <!-- Test for selecting stuff? It wont show unless there is something selected. Currently NOT used. -->
-<div *ngIf="selectedMovie">
-  <h2>{{selectedMovie.title}} details!</h2>
-  <div><label>id: </label>{{selectedMovie.id}}</div>
+<div *ngIf="movieService.slctdMovie">
+  <h2>{{movieService.slctdMovie.title}} details!</h2>
+  <div><label>id: </label>{{movieService.slctdMovie.id}}</div>
 </div>
 
-<!-- Menu Component -->
-<main-menu-bar></main-menu-bar>
 
-<!--  -->
-<div class="">
-  <movie-list [movies]="movies" ></movie-list>
-</div>
+<app-menu-bar (onViewChange)="onViewChange($event)"></app-menu-bar>
+
+<ul class="flex-container" *ngIf="cardsView"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
+  <app-movie-card *ngFor="let movie of _movies" [movie]="movie"></app-movie-card>
+</ul>
+
+<md-list *ngIf="!cardsView">
+  <h1 md-subheader>Movies</h1>
+  <app-movie-row *ngFor="let movie of _movies" [movie]="movie"></app-movie-row>
+</md-list>
+
+
+<button md-button (click)="testButton()">TRY POP</button>

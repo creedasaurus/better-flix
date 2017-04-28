@@ -9,4 +9,12 @@
     <md-option>Director</md-option>
     <md-option>Ratings</md-option>
   </md-select>
+  <md-button-toggle-group>
+    <md-button-toggle (click)="viewChange(false)">
+      <md-icon>list</md-icon>
+    </md-button-toggle>
+    <md-button-toggle (click)="viewChange(true)">
+      <md-icon>view_module</md-icon>
+    </md-button-toggle>
+  </md-button-toggle-group>
 </md-toolbar>
