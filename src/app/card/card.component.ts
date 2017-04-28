@@ -10,6 +10,7 @@ import { MoviesService } from '../movies/movies.service';
 
 export class MovieCardComponent {
   private _movie: Movie;
+  expand: number;
 
   @Input()
   set movie(movie: Movie) {
@@ -17,6 +18,14 @@ export class MovieCardComponent {
   }
   get movie(): Movie {
     return this._movie;
+  }
+
+  toggleExpand(selected: number) {
+    if (this.expand === selected) {
+      this.expand = 0;
+    } else {
+      this.expand = selected;
+    }
   }
 
   clickWatchedButton(movie: Movie) {
