@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   _watchedMovies: Movie[] = [];
   selectedMovie: Movie;
   cardsView = true;
+  filter = '';
 
   onViewChange(cardsView: boolean) {
     cardsView ? this.cardsView = true : this.cardsView = false;

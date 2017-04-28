@@ -7,11 +7,11 @@
   <div><label>id: </label>{{movieService.slctdMovie.id}}</div>
 </div>
 
-
+<input type="text" [(ngModel)]="filter">
 <app-menu-bar (onViewChange)="onViewChange($event)"></app-menu-bar>
 
 <ul class="flex-container" *ngIf="cardsView"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
-  <app-movie-card *ngFor="let movie of _movies" [movie]="movie"></app-movie-card>
+  <app-movie-card *ngFor="let movie of ( _movies | filterBy:filter )" [movie]="movie"></app-movie-card>
 </ul>
 
 <md-list *ngIf="!cardsView">
