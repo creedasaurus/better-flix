@@ -7,9 +7,11 @@ config.json
 
 # dependencies
 /node_modules
+/mongo_data
 
 # IDEs and editors
 /.idea
+/.vscode
 .project
 .classpath
 .c9/

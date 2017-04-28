@@ -1,9 +1,9 @@
 <md-list-item>
   <md-icon md-list-icon>movie</md-icon>
-  <h4>{{movie.title}}</h4>
-  <p>{{movie.year_released}}</p>
-  <p>{{movie.director}}</p>
-  <p>{{movie.description}}</p>
+  <h4 id="name-cell">{{movie.Title}}</h4>
+  <p id="year-cell">{{movie.Released}}</p>
+  <p id="director-cell">{{movie.Director}}</p>
+  <p id="description-cell">{{movie.Plot}}</p>
   <button md-raised-button (click)="clickLikeButton(movie)">LIKE</button>
   <button md-raised-button (click)="clickWatchedButton(movie)">WATCHED</button>
 </md-list-item>

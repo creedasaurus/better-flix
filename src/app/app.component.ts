@@ -13,6 +13,11 @@ export class AppComponent implements OnInit {
   _movies: Movie[] = [];
   _watchedMovies: Movie[] = [];
   selectedMovie: Movie;
+  cardsView = true;
+
+  onViewChange(cardsView: boolean) {
+    cardsView ? this.cardsView = true : this.cardsView = false;
+  }
 
   constructor(public movieService: MoviesService) {
     // TODO: Every time a movie is selected (no purpose for this currently)
@@ -21,26 +26,30 @@ export class AppComponent implements OnInit {
     );
 
     // Adds a 'watched' movie to local array
-    movieService.watchedMovie$.subscribe(
-      movie => {
+    movieService.watchedMovie$.subscribe( movie => {
         this._watchedMovies.push(movie);
         this._movies = this._movies.filter(mov => mov.id !== movie.id);
-      }
-    );
+      });
   }
 
   getNewMovies() {
     this.movieService.getMovies()
       .subscribe( movies => this._movies = movies );
+    this.movieService.getWatched()
+      .subscribe( watched => this._watchedMovies = watched );
   }
 
   testButton() {
-    console.log('test button (nothing)');
+    // console.log('test button (nothing)');
+    console.log(this._watchedMovies);
+  }
+
+  filterWatched() {
+
   }
 
   // Initialization (runs once)
   ngOnInit() {
-    // console.log('in init of app component');
     this.getNewMovies();
   }
 }

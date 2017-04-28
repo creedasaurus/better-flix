@@ -24,16 +24,21 @@ export class MoviesService {
 
   // Gets Movies from the server
   getMovies(): Observable<Movie[]> {
-    const things = this.http.get(this.serverURL + '/movies.json')
+    return this.http.get(this.serverURL + '/new/movies.json')
           .map(function (res) {
             return res.json().map(mov => <Movie>mov);
           });
-    console.log(things);
-    return things;
+  }
+
+  getWatched(): Observable<Movie[]> {
+    return this.http.get(this.serverURL + '/my/movies.json')
+          .map(function (res) {
+            return res.json().map(mov => <Movie>mov);
+          });
   }
 
   watched(movie: Movie) {
-    console.log(`Watching ${movie.title}`);
+    console.log(`Watching ${movie.Title}`);
     console.log('pushing to server and updating observable');
     this.addToWatched(movie);
     this.watchedMovieSource.next(movie);
@@ -51,9 +56,9 @@ export class MoviesService {
   }
 
   // Simplifies extracting data from the server response
-  private extractData(res: Response) {
-    const body = res.json();
-    console.log(body);
-    return body.data as Movie[];
-  }
+  // private extractData(res: Response) {
+  //   const body = res.json();
+  //   console.log(body);
+  //   return body.data as Movie[];
+  // }
 }

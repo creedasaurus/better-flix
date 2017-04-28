@@ -3,13 +3,77 @@
 }
 
 .movie-card-style {
-  background: tomato;
   /*padding: 5px;*/
-  width: 250px;
+  width: 300px;
   margin: 4px;
   color: white;
 }
 
+md-card {
+  padding: 0px;
+}
+
 md-card-header {
+  padding: 14px 24px 14px 24px;
+  background: tomato;
+}
+
+md-card-subtitle {
+  color: whitesmoke;
+  text-align: left;
+  font-size: 11px;
+  margin-bottom: 0px;
+}
+
+md-card-content {
+  padding: 24px;
+  background: white;
+  color: dimgray;
+}
+
+md-card-actions {
   text-align: center;
+}
+
+#rating {
+  display: inline-block;
+  border: 1px solid;
+  margin: 2px 5px 2px 0;
+  padding: 1px 3px 0;
+  max-height: 14px;
+  box-sizing: border-box;
+  font-size: 11px;
+  line-height: 11px;
+  color: whitesmoke;
+}
+
+#poster-image {
+  height: 228px !important;
+  width: 160px !important;
+  display: block;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  padding: 10px 0px 10px 0px;
+}
+
+.flex-item {
+  width: 100px;
+  text-align: center;
+  font-size: 11px;
+}
+
+#rotten {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  padding: 0px 2px 0px 2px;
 }
