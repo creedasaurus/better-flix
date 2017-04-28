@@ -24,6 +24,8 @@ import { MenuBarComponent } from './menu/menu.component';
 import { MovieCardComponent } from './card/card.component';
 import { MoviesService } from './movies/movies.service';
 import { MovieRowComponent } from './row/row.component';
+import { FilterByPipe } from './movies/filter-by.pipe';
+import { OrderByPipe } from './movies/order-by.pipe';
 
 @NgModule({
   imports: [
@@ -46,7 +48,9 @@ import { MovieRowComponent } from './row/row.component';
     AppComponent,
     MenuBarComponent,
     MovieCardComponent,
-    MovieRowComponent
+    MovieRowComponent,
+    FilterByPipe,
+    OrderByPipe
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
