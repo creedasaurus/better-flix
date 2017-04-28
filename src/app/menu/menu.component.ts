@@ -8,19 +8,54 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 export class MenuBarComponent {
   @Output() onViewChange = new EventEmitter<boolean>();
-  selectedFilter: string = 'rating';
-  selectedSpecFilter: string = 'PG';
-
+  @Output() onFilterChnge = new EventEmitter<Object>();
   filterOptions: string[];
-  filterSpecOps: string[];
+
+  selectedFilter: string;
+  selectedSpecFilter: string;
+  selectedOrder: string;
 
   filters = {
-    'rating': ['G', 'PG'],
-    'review_score': [1,2,3,4,5],
-    'category': ['anime', 'live-action'],
-    'cost-type': ['paid', 'free']
+    'Rated': ['G', 'PG', 'PG-13', 'R', 'NR'],
+    'Genre': [
+        'Action',
+        'Adventure',
+        'Animation',
+        'Biography',
+        'Comedy',
+        'Crime',
+        'Documentary',
+        'Drama',
+        'Family',
+        'Fantasy',
+        'Film-Noir',
+        'History',
+        'Horror',
+        'Music',
+        'Musical',
+        'Mystery',
+        'Romance',
+        'Sci-Fi',
+        'Sport',
+        'Thriller',
+        'War',
+        'Western'
+      ]
   };
 
+  orders = [
+    'Score',
+    'Title',
+    'Release Date',
+    'Genre'
+  ];
+
+  changeFilter() {
+    this.onFilterChnge.emit({
+      'filter': this.selectedFilter,
+      'specFilt': this.selectedSpecFilter
+    });
+  }
 
   viewChange(cardsView: boolean) {
     this.onViewChange.emit(cardsView);

@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   _watchedMovies: Movie[] = [];
   selectedMovie: Movie;
   cardsView = true;
-  filter = '';
+  filter: Object;
 
   onViewChange(cardsView: boolean) {
     cardsView ? this.cardsView = true : this.cardsView = false;
@@ -47,6 +47,12 @@ export class AppComponent implements OnInit {
 
   filterWatched() {
 
+  }
+
+  onFilterChanges(filt: any) {
+    // console.log(filt);
+    this.filter = filt;
+    console.log(this.filter);
   }
 
   // Initialization (runs once)

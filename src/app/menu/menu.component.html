@@ -3,21 +3,25 @@
     <input mdInput placeholder="Filter" value="">
   </md-input-container>-->
 
-  <md-select [(ngModel)]="selectedFilter">
-    <md-option *ngFor="let op of filterOptions" >{{op}}</md-option>
+
+  <!-- PRIMARY FILTER -->
+  <md-select [(ngModel)]="selectedFilter" placeholder="Filter">
+    <md-option  *ngFor="let op of filterOptions" [value]="op" >{{op}}</md-option>
   </md-select>
 
-  <md-select *ngIf="filterOptions" [(ngModel)]="selectedSpecFilter" >
-    <md-option *ngFor="let op of filters.selectedFilter" >{{op}}</md-option>
+
+  <!-- SECONDARY -->
+  <md-select (change)="changeFilter()" *ngIf="selectedFilter" [(ngModel)]="selectedSpecFilter" >
+    <md-option *ngFor="let op of filters[selectedFilter]" [value]="op">{{op}}</md-option>
   </md-select>
 
   <span class="toolbar-spacer"></span>
-  <md-select placeholder="Sort By">
-    <md-option>Title</md-option>
-    <md-option>Year</md-option>
-    <md-option>Director</md-option>
-    <md-option>Ratings</md-option>
+
+  <md-select placeholder="Sort By" [(ngModel)]="selectedOrder">
+    <md-option *ngFor="let op of orders" [value]="op">{{op}}</md-option>
   </md-select>
+
+  <!-- TO USE LATER MAYBE -->
   <!--<md-button-toggle-group>
     <md-button-toggle (click)="viewChange(false)">
       <md-icon>list</md-icon>
