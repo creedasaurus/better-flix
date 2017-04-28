@@ -14,80 +14,7 @@ router.use(bodyParser.json());
 
 // let Guidebox = require('guidebox')(nconf.get('API_KEY'));
 
-
-let test_movies_1 = [
-  { id: 1,
-    title: 'Slappy Tap Dance',
-    year_released: '1998-04-04',
-    director: 'Hanz Zimmer',
-    description: 'This is such a great movie. Go and check out the latest thing.'
-  },
-  { id: 2,
-    title: 'The itchy and scratchy Show',
-    year_released: '1991-05-11',
-    director: 'That one guy',
-    description: 'Best show of all time. Go see some things.'
-  },
-  { id: 3,
-    title: 'Rude Booty',
-    year_released: '2010-01-01',
-    director: 'Great Guy',
-    description: 'One heck of a wow.'
-  },
-  { id: 4,
-    title: 'A credit company',
-    year_released: '1959-03-10',
-    director: 'Candy Harmon',
-    description: 'Chowder Haws is amazing in this.'
-  },
-  { id: 5,
-    title: 'Robo-Cow 5',
-    year_released: '2001-04-01',
-    director: 'Candy Harmon',
-    description: 'Another one bites the fender guitar.'
-  },
-  { id: 6,
-    title: 'Roxberries',
-    year_released: '2014-01-10',
-    director: 'Dung Harmon',
-    description: 'I cant stand up after this'
-  },
-  { id: 7,
-    title: 'Poetry Tang',
-    year_released: '1983-08-01',
-    director: 'Buzz Dude',
-    description: 'There aint a movie in the world as good'
-  }
-];
-
-// let watched = [
-//    { id: 5,
-//     title: 'Robo-Cow 5',
-//     year_released: '2001-04-01',
-//     director: 'Candy Harmon',
-//     description: 'Another one bites the fender guitar.'
-//   }
-// ];
-let watched = [{
-  id: 7,
-  Title: "The Big Lebowski",
-  Year: "1998",
-  Rated: "R",
-  Released: "06 Mar 1998",
-  Runtime: "117 min",
-  Genre: "Comedy, Crime, Mystery",
-  Director: "Joel Coen, Ethan Coen",
-  Writer: "Ethan Coen, Joel Coen",
-  Actors: "Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi",
-  Plot: "\"The Dude\" Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
-  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BZTFjMjBiYzItNzU5YS00MjdiLWJkOTktNDQ3MTE3ZjY2YTY5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
-  Metascore: "69",
-  imdbRating: "8.2",
-  imdbID: "tt0118715",
-  rottentomatoes: "81%"
-}];
-
-test_movies_2 = [{
+test_movies = [{
   id: 1,
   Title: "Fight Club",
   Year: "1999",
@@ -242,9 +169,28 @@ test_movies_2 = [{
   rottentomatoes: "71%"
 }];
 
+let watched = [{
+  id: 7,
+  Title: "The Big Lebowski",
+  Year: "1998",
+  Rated: "R",
+  Released: "06 Mar 1998",
+  Runtime: "117 min",
+  Genre: "Comedy, Crime, Mystery",
+  Director: "Joel Coen, Ethan Coen",
+  Writer: "Ethan Coen, Joel Coen",
+  Actors: "Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi",
+  Plot: "\"The Dude\" Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BZTFjMjBiYzItNzU5YS00MjdiLWJkOTktNDQ3MTE3ZjY2YTY5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+  Metascore: "69",
+  imdbRating: "8.2",
+  imdbID: "tt0118715",
+  rottentomatoes: "81%"
+}];
+
 router.get('/new/movies.json', function (req, res) {
   winston.info('Getting all the films'.green);
-  let resp_movies = test_movies_2.filter(function (movie) {
+  let resp_movies = test_movies.filter(function (movie) {
     return watched.map(x => x.id).indexOf(movie.id) === -1;
   });
   res.status(200).json(resp_movies);
