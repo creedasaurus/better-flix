@@ -5,10 +5,13 @@
   </md-card-header>
   <md-card-content>
     <img md-card-image src="{{movie.Poster}}" id="poster-image">
-    <p>{{movie.Plot}}</p>
-    <p><b>Director: </b>{{movie.Director}}</p>
-    <p><b>Writer: </b>{{movie.Writer}}</p>
-    <p><b>Staring: </b>{{movie.Actors}}</p>
+    <br/>
+    <p class="truncate">{{movie.Plot}}</p>
+    <br/>
+    <p class="truncate"><b>Director: </b>{{movie.Director}}</p>
+    <p class="truncate"><b>Writer: </b>{{movie.Writer}}</p>
+    <p class="truncate"><b>Staring: </b>{{movie.Actors}}</p>
+    <br/>
     <div class="flex-container">
       <div class="flex-item"><b>{{movie.imdbRating}}</b><br/>IMDb</div>
       <div class="flex-item" id="rotten"><b>{{movie.rottentomatoes}}</b><br/>Rotten Tomatoes</div>
