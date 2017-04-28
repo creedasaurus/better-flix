@@ -30,7 +30,8 @@ test_movies = [{
   Metascore: "66",
   imdbRating: "8.8",
   imdbID: "tt0137523",
-  rottentomatoes: "79%"
+  rottentomatoes: "79%",
+  Type: "movie"
 }, {
   id: 2,
   Title: "Rogue One",
@@ -47,7 +48,8 @@ test_movies = [{
   Metascore: "65",
   imdbRating: "8.0",
   imdbID: "tt3748528",
-  rottentomatoes: "85%"
+  rottentomatoes: "85%",
+  Type: "movie"
 }, {
   id: 3,
   Title: "Split",
@@ -64,7 +66,8 @@ test_movies = [{
   Metascore: "62",
   imdbRating: "7.4",
   imdbID: "tt4972582",
-  rottentomatoes: "75%"
+  rottentomatoes: "75%",
+  Type: "movie"
 }, {
   id: 4,
   Title: "Moana",
@@ -81,7 +84,8 @@ test_movies = [{
   Metascore: "81",
   imdbRating: "7.7",
   imdbID: "tt3521164",
-  rottentomatoes: "95%"
+  rottentomatoes: "95%",
+  Type: "movie"
 }, {
   id: 5,
   Title: "La La Land",
@@ -98,7 +102,8 @@ test_movies = [{
   Metascore: "93",
   imdbRating: "8.3",
   imdbID: "tt3783958",
-  rottentomatoes: "93%"
+  rottentomatoes: "93%",
+  Type: "movie"
 }, {
   id: 6,
   Title: "Jurassic World",
@@ -115,7 +120,8 @@ test_movies = [{
   Metascore: "59",
   imdbRating: "7.0",
   imdbID: "tt0369610",
-  rottentomatoes: "71%"
+  rottentomatoes: "71%",
+  Type: "movie"
 }, {
   id: 7,
   Title: "The Big Lebowski",
@@ -132,7 +138,8 @@ test_movies = [{
   Metascore: "69",
   imdbRating: "8.2",
   imdbID: "tt0118715",
-  rottentomatoes: "81%"
+  rottentomatoes: "81%",
+  Type: "movie"
 }, {
   id: 8,
   Title: "Memento",
@@ -149,7 +156,8 @@ test_movies = [{
   Metascore: "80",
   imdbRating: "8.5",
   imdbID: "tt0209144",
-  rottentomatoes: "92%"
+  rottentomatoes: "92%",
+  Type: "movie"
 }, {
   id: 9,
   Title: "Interstellar",
@@ -166,7 +174,134 @@ test_movies = [{
   Metascore: "74",
   imdbRating: "8.6",
   imdbID: "tt0816692",
-  rottentomatoes: "71%"
+  rottentomatoes: "71%",
+  Type: "movie"
+}, {
+  id: 10,
+  Title: "Lost",
+  Year: "2004–2010",
+  Rated: "TV-14",
+  Released: "22 Sep 2004",
+  Runtime: "44 min",
+  Genre: "Adventure, Drama, Fantasy",
+  Director: "N/A",
+  Writer: "J.J. Abrams, Jeffrey Lieber, Damon Lindelof",
+  Actors: "Jorge Garcia, Josh Holloway, Yunjin Kim, Evangeline Lilly",
+  Plot: "The survivors of a plane crash are forced to work together in order to survive on a seemingly deserted tropical island.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "8.4",
+  imdbID: "tt0411008",
+  rottentomatoes: "N/A",
+  Type: "series"
+}, {
+  id: 11,
+  Title: "Silicon Valley",
+  Year: "2014–",
+  Rated: "TV-MA",
+  Released: "06 Apr 2014",
+  Runtime: "28 min",
+  Genre: "Comedy",
+  Director: "N/A",
+  Writer: "John Altschuler, Mike Judge, Dave Krinsky",
+  Actors: "Thomas Middleditch, T.J. Miller, Josh Brener, Martin Starr",
+  Plot: "Follows the struggle of Richard Hendricks, a silicon valley engineer trying to build his own company called Pied Piper",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BOTA4MTE3MTQwMF5BMl5BanBnXkFtZTgwNzk4MTg4MTI@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "8.5",
+  imdbID: "tt2575988",
+  rottentomatoes: "98%",
+  Type: "series"
+}, {
+  id: 12,
+  Title: "Fargo",
+  Year: "2014–",
+  Rated: "TV-MA",
+  Released: "15 Apr 2014",
+  Runtime: "53 min",
+  Genre: "Crime, Drama, Thriller",
+  Director: "Noah Hawley",
+  Writer: "Noah Hawley",
+  Actors: "Allison Tolman, Colin Hanks, Martin Freeman, Billy Bob Thornton",
+  Plot: "Various chronicles of deception, intrigue and murder in and around frozen Minnesota. Yet all of these tales mysteriously lead back one way or another to Fargo, ND.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BNmNiNDc4MzQtNjFmMC00MzQ1LTkyZjUtODMxN2UyMmYxZmFmXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "9.0",
+  imdbID: "tt2802850",
+  rottentomatoes: "98%",
+  Type: "series"
+}, {
+  id: 13,
+  Title: "True Detective",
+  Year: "2014–",
+  Rated: "TV-MA",
+  Released: "12 Jan 2014",
+  Runtime: "55 min",
+  Genre: "Crime, Drama, Mystery",
+  Director: "N/A",
+  Writer: "Nic Pizzolatto",
+  Actors: "Matthew McConaughey, Colin Farrell, Woody Harrelson, Rachel McAdams",
+  Plot: "An anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNTMwODI1OV5BMl5BanBnXkFtZTgwMDIzMTQ0NTE@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "9.1",
+  imdbID: "tt2356777",
+  rottentomatoes: "75%",
+  Type: "series"
+}, {
+  id: 14,
+  Title: "The Office",
+  Year: "2005–2013",
+  Rated: "TV-PG",
+  Released: "24 Mar 2005",
+  Runtime: "22 min",
+  Genre: "Comedy",
+  Director: "N/A",
+  Writer: "Greg Daniels, Ricky Gervais, Stephen Merchant",
+  Actors: "Rainn Wilson, John Krasinski, Jenna Fischer, Leslie David Baker",
+  Plot: "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium. Based on the hit BBC series.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgzNjAzMDE0NF5BMl5BanBnXkFtZTcwNTEyMzM3OA@@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "8.8",
+  imdbID: "tt0386676",
+  rottentomatoes: "N/A",
+  Type: "series"
+}, {
+  id: 15,
+  Title: "Game of Thrones",
+  Year: "2011–",
+  Rated: "R",
+  Released: "17 Apr 2011",
+  Runtime: "56 min",
+  Genre: "Adventure, Drama, Fantasy",
+  Director: "N/A",
+  Writer: "David Benioff, D.B. Weiss",
+  Actors: "Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington",
+  Plot: "Nine noble families fight for control over the mythical lands of Westeros; A forgotten race returns after being dormant for thousands of years.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwOTcxODc2Ml5BMl5BanBnXkFtZTgwMjMyMDk2MTI@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "9.5",
+  imdbID: "tt0944947",
+  rottentomatoes: "95%",
+  Type: "series"
+}, {
+  id: 16,
+  Title: "Parks and Recreation",
+  Year: "2009–2015",
+  Rated: "TV-PG",
+  Released: "09 Apr 2009",
+  Runtime: "22 min",
+  Genre: "Comedy",
+  Director: "N/A",
+  Writer: "Greg Daniels, Michael Schur",
+  Actors: "Amy Poehler, Nick Offerman, Aubrey Plaza, Chris Pratt",
+  Plot: "The absurd antics of an Indiana town's public officials as they pursue sundry projects to make their city a better place.",
+  Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MjUxNDgwNF5BMl5BanBnXkFtZTgwMDI5NjMwNDE@._V1_SX300.jpg",
+  Metascore: "N/A",
+  imdbRating: "8.6",
+  imdbID: "tt1266020",
+  rottentomatoes: "90%",
+  Type: "series"
 }];
 
 let watched = [{
@@ -185,7 +320,8 @@ let watched = [{
   Metascore: "69",
   imdbRating: "8.2",
   imdbID: "tt0118715",
-  rottentomatoes: "81%"
+  rottentomatoes: "81%",
+  Type: "movie"
 }];
 
 router.get('/new/movies.json', function (req, res) {
