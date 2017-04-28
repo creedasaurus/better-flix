@@ -3,7 +3,6 @@
 }
 
 .movie-card-style {
-  background: tomato;
   /*padding: 5px;*/
   width: 250px;
   margin: 4px;
@@ -11,5 +10,18 @@
 }
 
 md-card-header {
+  background: tomato;
   text-align: center;
+}
+
+#rating {
+  display: inline-block;
+  border: 1px solid;
+  margin: 2px 5px 2px 0;
+  padding: 1px 3px 0;
+  max-height: 14px;
+  box-sizing: border-box;
+  font-size: 11px;
+  line-height: 11px;
+  color: whitesmoke;
 }
