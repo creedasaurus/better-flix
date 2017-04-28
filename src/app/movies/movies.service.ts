@@ -38,7 +38,7 @@ export class MoviesService {
   }
 
   watched(movie: Movie) {
-    console.log(`Watching ${movie.title}`);
+    console.log(`Watching ${movie.Title}`);
     console.log('pushing to server and updating observable');
     this.addToWatched(movie);
     this.watchedMovieSource.next(movie);

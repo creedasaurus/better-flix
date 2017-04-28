@@ -1,20 +1,22 @@
 <md-card class="movie-card-style">
   <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>{{movie.title}}</md-card-title>
-    <md-card-subtitle><div id="rating">{{movie.rating}}</div>{{movie.release_date}}</md-card-subtitle>
+    <md-card-title>{{movie.Title}}</md-card-title>
+    <md-card-subtitle><div id="rating">{{movie.Rated}}</div>{{movie.Year}} | {{movie.Genre}}<br/>{{movie.Runtime}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
-    <h3>{{movie.director}}</h3>
-    <p>
-      {{movie.description}}
-    </p>
+    <img md-card-image src="{{movie.Poster}}" id="poster-image">
+    <p>{{movie.Plot}}</p>
+    <p><b>Director: </b>{{movie.Director}}</p>
+    <p><b>Writer: </b>{{movie.Writer}}</p>
+    <p><b>Staring: </b>{{movie.Actors}}</p>
+    <div class="flex-container">
+      <div class="flex-item"><b>{{movie.imdbRating}}</b><br/>IMDb</div>
+      <div class="flex-item" id="rotten"><b>{{movie.rottentomatoes}}</b><br/>Rotten Tomatoes</div>
+      <div class="flex-item"><b>{{movie.Metascore}}</b><br/>Metacritic</div>
+    </div>
+    <md-card-actions>
+      <button md-button (click)="clickLikeButton(movie)">LIKE</button>
+      <button md-button (click)="clickWatchedButton(movie)">WATCHED</button>
+    </md-card-actions>
   </md-card-content>
-  <md-card-actions>
-    <button md-button (click)="clickLikeButton(movie)">LIKE</button>
-    <button md-button (click)="clickWatchedButton(movie)">WATCHED</button>
-  </md-card-actions>
-  <md-card-footer>
-
-  </md-card-footer>
 </md-card>
