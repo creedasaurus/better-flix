@@ -1,4 +1,4 @@
-import {Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 
@@ -11,6 +11,7 @@ import { MoviesService } from '../movies/movies.service';
 export class MovieCardComponent {
   private _movie: Movie;
   expand: number;
+  liked: boolean;
 
   @Input()
   set movie(movie: Movie) {
@@ -29,11 +30,13 @@ export class MovieCardComponent {
   }
 
   clickWatchedButton(movie: Movie) {
+    this.liked = false;
     this.movieService.watched(movie);
   }
 
   clickLikeButton(movie: Movie) {
     console.log(movie);
+    this.liked = true;
     this.movieService.slctdMovie = movie;
   }
   constructor(private movieService: MoviesService) {}
