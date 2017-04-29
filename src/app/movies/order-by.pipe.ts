@@ -11,10 +11,6 @@ export class OrderByPipe implements PipeTransform {
     Genre: this.orderStrings
   };
 
-  orderNumber(a: number, b: number) {
-    return a - b;
-  }
-
   averageScore(mov: Movie): number {
     const scores = [
       parseFloat(mov.imdbRating) * 10,
@@ -35,7 +31,7 @@ export class OrderByPipe implements PipeTransform {
   }
 
   orderDates(a: string, b: string) {
-    return this.orderNumber(Date.parse(a), Date.parse(b));
+    return Date.parse(a) - Date.parse(b);
   }
 
   orderAverageScores(a: Movie, b: Movie) {
