@@ -17,7 +17,7 @@
 
   <span class="toolbar-spacer"></span>
 
-  <md-select placeholder="Sort By" [(ngModel)]="selectedOrder">
+  <md-select (change)="changeOrder()" placeholder="Sort By" [(ngModel)]="selectedOrder">
     <md-option *ngFor="let op of orders" [value]="op">{{op}}</md-option>
   </md-select>
 

@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
   onFilterChanges(filt: Object) {
     // console.log(filt);
     this.filter = filt;
-    console.log(this.filter);
+    // console.log(this.filter);
   }
 
   orderChange(orderBy: string) {

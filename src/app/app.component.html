@@ -10,7 +10,7 @@
 <app-menu-bar (onOrderChange)="orderChange($event)" (onViewChange)="onViewChange($event)" (onFilterChange)="onFilterChanges($event)" ></app-menu-bar>
 
 <ul class="flex-container" *ngIf="cardsView"> <!-- this [movie] thing corresponds to the app-movie-card movie-card -->
-  <app-movie-card *ngFor="let movie of ( _movies | filterBy:filter  | orderBy)" [movie]="movie"></app-movie-card>
+  <app-movie-card *ngFor="let movie of ( _movies | filterBy:filter ) | orderBy:order" [movie]="movie"></app-movie-card>
 </ul>
 
 <md-list *ngIf="!cardsView">
@@ -19,4 +19,4 @@
 </md-list>
 
 
-<button md-button (click)="testButton()">TRY POP</button>
+<button md-button (click)="testButton()">WATCHED MOVIES</button>

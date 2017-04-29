@@ -59,6 +59,10 @@ export class MenuBarComponent {
     });
   }
 
+  changeOrder() {
+    this.onOrderChange.emit(this.selectedOrder);
+  }
+
   viewChange(cardsView: boolean) {
     this.onViewChange.emit(cardsView);
   }
