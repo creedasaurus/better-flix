@@ -23,6 +23,8 @@ md-card-subtitle {
   text-align: left;
   font-size: 11px;
   margin-bottom: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 md-card-content {

@@ -1,7 +1,9 @@
 <md-card class="movie-card-style">
   <md-card-header>
     <md-card-title>{{movie.Title}}</md-card-title>
-    <md-card-subtitle><div id="rating">{{movie.Rated}}</div>{{movie.Year}} | {{movie.Genre}}<br/>{{movie.Runtime}}</md-card-subtitle>
+    <md-card-subtitle>
+      <div id="rating">{{movie.Rated}}</div>{{movie.Year}} | {{movie.Genre}}<br/>{{movie.Runtime}}
+    </md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <img md-card-image src="{{movie.Poster}}" id="poster-image">

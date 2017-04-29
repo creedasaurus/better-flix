@@ -11,6 +11,19 @@ export class OrderByPipe implements PipeTransform {
     Genre: this.orderStrings
   };
 
+  orderNumber(a: number, b: number) {
+    return a - b;
+  }
+
+  averageScore(mov: Movie): number {
+    const scores = [
+      parseFloat(mov.imdbRating) * 10,
+      parseInt(mov.Metascore, 10),
+      parseInt(mov.rottentomatoes, 10)
+    ].filter(num => !isNaN(num));
+    return scores.reduce((a, b) => a + b, 0) / scores.length;
+  }
+
   orderStrings(a: string, b: string) {
     if (a.toLowerCase() < b.toLowerCase()) {
       return -1;
@@ -22,13 +35,11 @@ export class OrderByPipe implements PipeTransform {
   }
 
   orderDates(a: string, b: string) {
-    if (Date.parse(a) > Date.parse(b)) {
-      return -1;
-    }
-    if (Date.parse(a) < Date.parse(b)) {
-      return 1;
-    }
-    return 0;
+    return this.orderNumber(Date.parse(a), Date.parse(b));
+  }
+
+  orderAverageScores(a: Movie, b: Movie) {
+    return this.averageScore(a) - this.averageScore(b);
   }
 
   transform(movies: Movie[], order?: string): Movie[] {
@@ -36,7 +47,7 @@ export class OrderByPipe implements PipeTransform {
       return movies;
     } else {
       if (order === 'Score') {
-        return movies;
+        return movies.sort((mov1, mov2) => this.orderAverageScores(mov1, mov2));
       }
       return movies.sort((mov1, mov2) => this.orderingMap[order](mov1[order], mov2[order]));
     }
