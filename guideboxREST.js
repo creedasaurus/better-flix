@@ -12,7 +12,23 @@ nconf.argv()
 
 router.use(bodyParser.json());
 
-// let Guidebox = require('guidebox')(nconf.get('API_KEY'));
+let Guidebox = require('guidebox')(nconf.get('API_KEY'));
+
+let movieIDs = [];
+Guidebox.movies.list({ offset: 3 })
+.then((res) => {
+  movieIDs = res.results.map(mov => mov.imdb);
+  console.log(movieIDs);
+});
+
+// things = Guidebox.movies.list()
+// .then(function (res) {
+//   console.log('stuff');
+//   console.log(res.data);
+// })
+// .catch(function (e) {
+//   console.log(e);
+// });
 
 test_movies = [{
   id: 1,

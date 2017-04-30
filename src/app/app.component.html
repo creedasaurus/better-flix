@@ -6,10 +6,10 @@
 
 
 <!-- Test for selecting stuff? It wont show unless there is something selected. Currently NOT used. -->
-<div *ngIf="movieService.slctdMovie">
+<!--<div *ngIf="movieService.slctdMovie">
   <h2>{{movieService.slctdMovie.title}} details!</h2>
   <div><label>id: </label>{{movieService.slctdMovie.id}}</div>
-</div>
+</div>-->
 
 <app-menu-bar (onOrderChange)="orderChange($event)" (onViewChange)="onViewChange($event)" (onFilterChange)="onFilterChanges($event)" ></app-menu-bar>
 
