@@ -10,7 +10,9 @@
     </md-chip-list>
   </md-card-header>
   <md-card-content>
-    <img md-card-image src="{{movie.Poster}}" id="poster-image">
+    <a href="http://www.imdb.com/title/{{movie.imdbID}}">
+      <img md-card-image src="{{movie.Poster}}" id="poster-image">
+    </a>
     <br/>
     <p (click)="toggleExpand(1)" [ngClass]="{'truncate': expand !== 1}">{{movie.Plot}}</p>
     <br/>
@@ -24,12 +26,12 @@
       <div class="flex-item"><b>{{movie.Metascore}}</b><br/>Metacritic</div>
     </div>
     <md-card-actions>
-      <div class="thumb-up">
+      <div id="thumb-up">
         <button md-icon-button (click)="clickLikeButton(movie)">
-          <md-icon>thumb_up</md-icon><br/>
+          <md-icon [ngStyle]="{'color': thumb_up_clicked}">thumb_up</md-icon><br/>
         </button>
       </div>
-      <div class="thumb-dn">
+      <div id="thumb-dn">
         <button md-icon-button (click)="clickWatchedButton(movie)">
           <md-icon>thumb_down</md-icon>
         </button>
