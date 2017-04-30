@@ -4,7 +4,7 @@
 
 .movie-card-style {
   /*padding: 5px;*/
-  width: 300px;
+  width: 360px;
   margin: 4px;
   color: white;
 }
@@ -15,7 +15,7 @@ md-card {
 
 md-card-header {
   padding: 14px 24px 14px 24px;
-  background: tomato;
+  background: darkslategray;
 }
 
 md-card-subtitle {
@@ -98,4 +98,8 @@ $lines-to-show: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
+}
+
+.liked {
+  border: 2px solid gold;
 }

@@ -15,7 +15,8 @@ import {
   MdSelectModule,
   MdSidenavModule,
   MdListModule,
-  MdDialogModule
+  MdDialogModule,
+  MdChipsModule
 } from '@angular/material';
 
 
@@ -42,7 +43,8 @@ import { OrderByPipe } from './movies/order-by.pipe';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MdListModule
+    MdListModule,
+    MdChipsModule
   ],
   declarations: [
     AppComponent,
