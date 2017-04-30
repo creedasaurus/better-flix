@@ -31,7 +31,7 @@ md-card-subtitle {
 }
 
 md-card-content {
-  padding: 24px;
+  padding: 24px 24px 4px 24px;
   background: white;
   color: dimgray;
 }
@@ -105,4 +105,34 @@ $lines-to-show: 1;
 
 .liked {
   border: 2px solid gold;
+}
+
+.like-chip {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background: gold !important;
+  color: black !important;
+}
+
+.thumb-up {
+  display: inline-block;
+  text-align: center;
+  zoom: 1;
+  width: 40%;
+  border-right-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  margin-right: -2px;
+}
+
+.thumb-dn {
+  display: inline-block;
+  text-align: center;
+  zoom: 1;
+  width: 40%;
+  border-left-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  margin-left: -3px;
 }
