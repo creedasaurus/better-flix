@@ -5,19 +5,19 @@
 
 
   <!-- PRIMARY FILTER -->
-  <md-select [(ngModel)]="selectedFilter" placeholder="Filter">
+  <md-select [(ngModel)]="selectedFilter" placeholder="Filter" class="drop-down-left">
     <md-option  *ngFor="let op of filterOptions" [value]="op" >{{op}}</md-option>
   </md-select>
 
 
   <!-- SECONDARY -->
-  <md-select (change)="changeFilter()" *ngIf="selectedFilter" [(ngModel)]="selectedSpecFilter" >
+  <md-select (change)="changeFilter()" *ngIf="selectedFilter" [(ngModel)]="selectedSpecFilter" class="drop-down-left" >
     <md-option *ngFor="let op of filters[selectedFilter]" [value]="op">{{op}}</md-option>
   </md-select>
 
   <span class="toolbar-spacer"></span>
 
-  <md-select (change)="changeOrder()" placeholder="Sort By" [(ngModel)]="selectedOrder">
+  <md-select (change)="changeOrder()" placeholder="Sort By" [(ngModel)]="selectedOrder" class="drop-down-right">
     <md-option *ngFor="let op of orders" [value]="op">{{op}}</md-option>
   </md-select>
 
