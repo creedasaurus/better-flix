@@ -29,7 +29,9 @@
       </button>
     </md-card-actions>
     <md-card-footer>
-      <md-chip *ngIf="liked" color="accent" selected="true">It's lit fam!</md-chip>
+      <md-chip-list>
+          <md-chip *ngIf="liked" color="accent" selected="true">It's lit fam!</md-chip>
+      </md-chip-list>
     </md-card-footer>
   </md-card-content>
 </md-card>
