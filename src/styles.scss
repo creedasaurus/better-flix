@@ -4,5 +4,6 @@
 //  width: 90%;
 //  padding: 5px;
 //}
-@import '~@angular/material/_theming';
+@import '~@angular/material/theming';
+@include mat-core();
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
