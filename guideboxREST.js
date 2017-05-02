@@ -320,7 +320,7 @@ test_movies = [{
   Type: "series"
 }];
 
-let watched = [{
+let disliked = [{
   id: 7,
   Title: "The Big Lebowski",
   Year: "1998",
@@ -343,17 +343,17 @@ let watched = [{
 router.get('/new/movies.json', function (req, res) {
   winston.info('Getting all the films'.green);
   let resp_movies = test_movies.filter(function (movie) {
-    return watched.map(x => x.id).indexOf(movie.id) === -1;
+    return disliked.map(x => x.id).indexOf(movie.id) === -1;
   });
   res.status(200).json(resp_movies);
 });
 
 router.get('/my/movies.json', function (req, res) {
-  winston.info('Getting my watched movies'.green);
-  res.status(200).json(watched);
+  winston.info('Getting the disliked movies'.green);
+  res.status(200).json(disliked);
 });
 
-router.post('/watched', function (req, res) {
+router.post('/disliked', function (req, res) {
   console.log(req.body);
   res.status(200).json({"gotit":1});
 });
