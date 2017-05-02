@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input } from '@angular/core';
 import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 import { MdSnackBar } from '@angular/material';
@@ -31,11 +31,14 @@ export class MovieCardComponent {
     }
   }
 
-  clickWatchedButton(movie: Movie) {
+  clickDislikeButton(movie: Movie) {
     this.liked = false;
-    this.movieService.watched(movie);
+    this.movieService.disliked(movie);
     this.snackbar.open(`Removed from Suggestions: ${movie.Title}`, 'UNDO', {
       duration: 3000,
+    })
+      .onAction().subscribe(() => {
+      this.movieService.undoDisliked(movie);
     });
   }
 

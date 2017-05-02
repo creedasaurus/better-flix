@@ -19,8 +19,8 @@ export class MovieRowComponent {
     return this._movie;
   }
 
-  clickWatchedButton(movie: Movie) {
-    this.movieService.watched(movie);
+  clickDislikeButton(movie: Movie) {
+    this.movieService.disliked(movie);
   }
 
   clickLikeButton(movie: Movie) {

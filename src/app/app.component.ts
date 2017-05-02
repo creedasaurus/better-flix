@@ -11,7 +11,7 @@ import { MoviesService } from './movies/movies.service';
 })
 export class AppComponent implements OnInit {
   _movies: Movie[] = [];
-  _watchedMovies: Movie[] = [];
+  _dislikedMovies: Movie[] = [];
   selectedMovie: Movie;
   cardsView = true;
   filter: Object;
@@ -27,26 +27,32 @@ export class AppComponent implements OnInit {
       movie => { this.selectedMovie = movie; }
     );
 
-    // Adds a 'watched' movie to local array
-    movieService.watchedMovie$.subscribe( movie => {
-        this._watchedMovies.push(movie);
-        this._movies = this._movies.filter(mov => mov.id !== movie.id);
-      });
+    // Adds a 'disliked' movie to local array
+    movieService.dislikedMovie$.subscribe( movie => {
+      this._dislikedMovies.push(movie);
+      this._movies = this._movies.filter(mov => mov.id !== movie.id);
+    });
+
+    // undos a 'disliked' movie from local array
+    movieService.undoDislikeMovie$.subscribe( movie => {
+      this._dislikedMovies = this._dislikedMovies.filter(mov => mov.id !== movie.id);
+      this._movies.push(movie);
+    });
   }
 
   getNewMovies() {
     this.movieService.getMovies()
       .subscribe( movies => this._movies = movies );
-    this.movieService.getWatched()
-      .subscribe( watched => this._watchedMovies = watched );
+    this.movieService.getDisliked()
+      .subscribe( disliked => this._dislikedMovies = disliked );
   }
 
   testButton() {
     // console.log('test button (nothing)');
-    console.log(this._watchedMovies);
+    console.log(this._dislikedMovies);
   }
 
-  filterWatched() {
+  filterDisliked() {
 
   }
 
