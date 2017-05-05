@@ -20,6 +20,7 @@ export class MoviesService {
   private serverURL = '/api/v1';
   public dislikedMovies = [];
   public slctdMovie: Movie;
+  public test: Array<any> = ['tt0386676'];
 
   // Constructor
   constructor(private http: Http) {}
@@ -41,7 +42,7 @@ export class MoviesService {
 
   disliked(movie: Movie) {
     console.log(`Dislike ${movie.Title}`);
-    console.log('pushing to server and updating observable');
+    // console.log('pushing to server and updating observable');
     this.addToDisliked(movie);
     this.dislikedMovieSource.next(movie);
   }
@@ -56,6 +57,7 @@ export class MoviesService {
   // TODO: Will push a new movie to the server for the user.
   addToDisliked(movie: Movie) {
     console.log('pushing movie to server DB');
+    localStorage.setItem('liked', 'neato');
     this.http.post(this.serverURL + '/disliked', movie).subscribe();
   }
 

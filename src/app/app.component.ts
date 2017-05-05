@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
   testButton() {
     // console.log('test button (nothing)');
     console.log(this._dislikedMovies);
+    alert(localStorage.getItem('liked'));
   }
 
   filterDisliked() {

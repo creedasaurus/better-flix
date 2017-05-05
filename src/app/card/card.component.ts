@@ -1,4 +1,4 @@
-import {Component, Input } from '@angular/core';
+import {Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../movies/movie';
 import { MoviesService } from '../movies/movies.service';
 import { MdSnackBar } from '@angular/material';
@@ -9,7 +9,7 @@ import { MdSnackBar } from '@angular/material';
   styleUrls: ['./card.component.scss']
 })
 
-export class MovieCardComponent {
+export class MovieCardComponent implements OnInit {
   private _movie: Movie;
   expand: number;
   liked = false;
@@ -52,6 +52,15 @@ export class MovieCardComponent {
     }
     this.movieService.slctdMovie = movie;
   }
+
+  ngOnInit() {
+    if (this._movie.imdbID === this.movieService.test[0]) {
+      console.log('got it already');
+      this.thumb_up_clicked = 'gold';
+      this.liked = true;
+    }
+  }
+
   constructor(
     private movieService: MoviesService,
     private snackbar: MdSnackBar
