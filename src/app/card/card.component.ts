@@ -51,11 +51,12 @@ export class MovieCardComponent implements OnInit {
       this.thumb_up_clicked = '';
     }
     this.movieService.slctdMovie = movie;
+    this.movieService.addToLiked(movie.imdbID);
   }
 
   ngOnInit() {
-    if (this._movie.imdbID === this.movieService.test[0]) {
-      console.log('got it already');
+    if (this._movie.imdbID === this.movieService.l_liked[0]) {
+      console.log('liked it already');
       this.thumb_up_clicked = 'gold';
       this.liked = true;
     }

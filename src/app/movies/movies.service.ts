@@ -20,10 +20,9 @@ export class MoviesService {
   private serverURL = '/api/v1';
   public dislikedMovies = [];
   public slctdMovie: Movie;
-  public test: Array<any> = ['tt0386676'];
+  public l_disliked: Array<string> = [];
+  public l_liked: Array<string> = [];
 
-  // Constructor
-  constructor(private http: Http) {}
 
   // Gets Movies from the server
   getMovies(): Observable<Movie[]> {
@@ -45,6 +44,7 @@ export class MoviesService {
     // console.log('pushing to server and updating observable');
     this.addToDisliked(movie);
     this.dislikedMovieSource.next(movie);
+
   }
 
   undoDisliked(movie: Movie) {
@@ -57,8 +57,13 @@ export class MoviesService {
   // TODO: Will push a new movie to the server for the user.
   addToDisliked(movie: Movie) {
     console.log('pushing movie to server DB');
-    localStorage.setItem('liked', 'neato');
     this.http.post(this.serverURL + '/disliked', movie).subscribe();
+  }
+
+  addToLiked(movId: string) {
+    let likedIds = localStorage.getItem('liked');
+
+
   }
 
   removeFromDisliked(movie: Movie) {
@@ -70,10 +75,30 @@ export class MoviesService {
     this.selectedMovieSource.next(movie);
   }
 
-  // Simplifies extracting data from the server response
-  // private extractData(res: Response) {
-  //   const body = res.json();
-  //   console.log(body);
-  //   return body.data as Movie[];
-  // }
+  getLocalStorage() {
+    if (!localStorage.liked) {
+      console.log('creating liked local storage');
+      localStorage.setItem('liked', JSON.stringify([]));
+    }
+
+    if (!localStorage.disliked) {
+      console.log('creating disliked local storage');
+      localStorage.setItem('disliked', JSON.stringify([]));
+    }
+
+    this.l_liked = localStorage.liked;
+    console.log(this.l_liked);
+    this.l_disliked = localStorage.disliked;
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+  }
+
+  // Constructor
+  constructor(private http: Http) {
+    this.getLocalStorage();
+    // FOR DEBUGGING, RUN THIS TO CLEAR
+    // this.clearLocalStorage();
+  }
 }
